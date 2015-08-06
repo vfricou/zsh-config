@@ -170,5 +170,5 @@ if [ "`id -u`" -eq 0 ];then
 	PROMPT="
 %{$terminfo[bold]$fg[blue]%}%~%{$reset_color%} ${GIT_PS1}
 %# "
-	RPROMPT="%{$fg[red]%}%(?..%?)%{$reset_color%} [%m:%{$terminfo[bold]$fg[green]%}%n%{$reset_color%}] %T"
+	RPROMPT="%{$fg[red]%}%(?..%?)%{$reset_color%} [%m:%{$terminfo[bold]$fg[green]%}%n%{$reset_color%}] %T ${batteryp}"
 fi
