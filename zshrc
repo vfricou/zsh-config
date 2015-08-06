@@ -85,8 +85,8 @@ then
 fi
 
 ### Command highlightning if exist
-if [[ -r /etc/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
-	source /etc/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [[ -r /etc/zsh/syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+	source /etc/zsh/syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
 ### Source git prompt configuration 
