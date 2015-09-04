@@ -2,6 +2,8 @@
 HISTFILE=~/.histfile
 HISTSIZE=100000
 SAVEHIST=100000
+export EDITOR="vim"
+export VISUAL="vim"
 
 autoload -Uz compinit
 compinit
