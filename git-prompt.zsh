@@ -29,11 +29,11 @@ parse_git_state() {
 		GIT_STATE=$GIT_STATE$GIT_PROMPT_MERGING
 	fi
 	local GIT_UNTRACKED="$(git ls-files --other --exclude-standard|wc -l 2>/dev/null)"
-	if [ -n ${GIT_UNTRACKED} ]; then
+	if [ ${GIT_UNTRACKED} = "" ]; then
 		GIT_STATE=$GIT_STATE$GIT_PROMPT_UNTRACKED${GIT_UNTRACKED}
 	fi
 	local GIT_MODIFIED="$(git ls-files --modified --exclude-standard|wc -l 2>/dev/null)"
-	if [ -n ${GIT_MODIFIED} ]; then
+	if [ ${GIT_MODIFIED} = "" ]; then
 		GIT_STATE=$GIT_STATE$GIT_PROMPT_MODIFIED${GIT_MODIFIED}
 	fi
 	if ! git diff --cached --quiet 2> /dev/null; then
