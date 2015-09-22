@@ -55,6 +55,10 @@ fi
 if [[ -r /etc/zsh/plugins/mosh/mosh.plugin.zsh ]]; then
 	source /etc/zsh/plugins/mosh/mosh.plugin.zsh
 fi
+# Source sprunge command to paste file
+if [[ -r /etc/zsh/plugins/sprunge/sprunge.plugin.zsh ]]; then
+	source /etc/zsh/plugins/sprunge/sprunge.plugin.zsh
+fi
 
 ##### Aliases
 	alias ls="ls --color"
