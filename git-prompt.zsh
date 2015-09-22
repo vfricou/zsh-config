@@ -29,15 +29,16 @@ parse_git_state() {
 		GIT_STATE=$GIT_STATE$GIT_PROMPT_MERGING
 	fi
 	local GIT_UNTRACKED="$(git ls-files --other --exclude-standard|wc -l 2>/dev/null)"
-	if [ ${GIT_UNTRACKED} = "" ]; then
+	if [ "${GIT_UNTRACKED}" != "0" ]; then
 		GIT_STATE=$GIT_STATE$GIT_PROMPT_UNTRACKED${GIT_UNTRACKED}
 	fi
 	local GIT_MODIFIED="$(git ls-files --modified --exclude-standard|wc -l 2>/dev/null)"
-	if [ ${GIT_MODIFIED} = "" ]; then
+	if [ "${GIT_MODIFIED}" != "0" ]; then
 		GIT_STATE=$GIT_STATE$GIT_PROMPT_MODIFIED${GIT_MODIFIED}
 	fi
-	if ! git diff --cached --quiet 2> /dev/null; then
-		GIT_STATE=$GIT_STATE$GIT_PROMPT_STAGED
+	local GIT_STAGED="$(git diff --name-only --cached | wc -l)"
+	if [ "${GIT_STAGED}" != "0" ]; then
+		GIT_STATE=$GIT_STATE$GIT_PROMPT_STAGED${GIT_STAGED}
 	fi
 	if [[ $GIT_STATE != "" ]]; then
 		echo "$GIT_PROMPT_PREFIX$GIT_STATE$GIT_PROMPT_SUFFIX"
