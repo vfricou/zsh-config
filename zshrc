@@ -14,8 +14,9 @@ autoload -Uz promptinit
 promptinit
 autoload -Uz colors && colors
 
-setopt appendhistory autocd beep extendedglob nomatch notify
+bindkey '^R' history-incremental-search-backward
 
+setopt appendhistory autocd beep extendedglob nomatch notify
 ### Command highlightning if exist
 if [[ -r /etc/zsh/syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
 	source /etc/zsh/syntax-highlighting/zsh-syntax-highlighting.zsh
