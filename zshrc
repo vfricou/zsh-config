@@ -61,12 +61,13 @@ if [[ -r /etc/zsh/plugins/sprunge/sprunge.plugin.zsh ]]; then
 	source /etc/zsh/plugins/sprunge/sprunge.plugin.zsh
 fi
 # Source ssh-agent evaluation
-if [[ -r /etc/zsh/plugins/ssh-agent/ssh-agent.plugin.zsh ]]; then
-	source /etc/zsh/plugins/ssh-agent/ssh-agent.plugin.zsh
-fi
+#if [[ -r /etc/zsh/plugins/ssh-agent/ssh-agent.plugin.zsh ]]; then
+#	source /etc/zsh/plugins/ssh-agent/ssh-agent.plugin.zsh
+#fi
 
 ##### Aliases
 	alias ls="ls --color"
+	alias whatismyip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 # Set the right-hand prompt
 if [ "`id -u`" -eq 0 ];then
