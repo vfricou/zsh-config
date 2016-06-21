@@ -60,7 +60,7 @@ fi
 if [[ -r /etc/zsh/plugins/sprunge/sprunge.plugin.zsh ]]; then
 	source /etc/zsh/plugins/sprunge/sprunge.plugin.zsh
 fi
-# Source ssh-agent evaluation
+# Source ssh-agent auto evaluation
 #if [[ -r /etc/zsh/plugins/ssh-agent/ssh-agent.plugin.zsh ]]; then
 #	source /etc/zsh/plugins/ssh-agent/ssh-agent.plugin.zsh
 #fi
