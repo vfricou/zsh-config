@@ -65,6 +65,11 @@ fi
 #	source /etc/zsh/plugins/ssh-agent/ssh-agent.plugin.zsh
 #fi
 
+# Zsh autosuggestions
+if [[ -r /etc/zsh/plugins/autosuggestions/zsh-autosuggestions.zsh ]]; then
+	source /etc/zsh/plugins/autosuggestions/zsh-autosuggestions.zsh
+fi
+
 ##### Aliases
 	alias ls="ls --color"
 	alias whatismyip="dig +short myip.opendns.com @resolver1.opendns.com"
