@@ -45,9 +45,9 @@ if [[ -r /etc/zsh/plugins/bind_keys/bind_keys.plugin.zsh ]]; then
 	source /etc/zsh/plugins/bind_keys/bind_keys.plugin.zsh
 fi
 # Prompt insertion for battery status on RPROMT
-if [[ -r /sys/class/power_supply/AC && -r /sys/class/power_supply/BAT0 ]]; then
-	local batteryp='$(/etc/zsh/plugins/battery/battery.sh)'
-fi
+#if [[ -r /sys/class/power_supply/AC && -r /sys/class/power_supply/BAT0 ]]; then
+#	local batteryp='$(/etc/zsh/plugins/battery/battery.sh)'
+#fi
 # Colored man
 if [[ -r /etc/zsh/plugins/colored-man/colored-man.plugin.zsh ]]; then
 	source /etc/zsh/plugins/colored-man/colored-man.plugin.zsh
