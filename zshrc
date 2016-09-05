@@ -70,6 +70,11 @@ if [[ -r /etc/zsh/plugins/autosuggestions/zsh-autosuggestions.zsh ]]; then
 	source /etc/zsh/plugins/autosuggestions/zsh-autosuggestions.zsh
 fi
 
+# Source sprunge command to paste file
+if [[ -r /etc/zsh/plugins/docker/docker.plugin.zsh ]]; then
+	source /etc/zsh/plugins/docker/docker.plugin.zsh
+fi
+
 ##### Aliases
 	alias ls="ls --color"
 	alias whatismyip="dig +short myip.opendns.com @resolver1.opendns.com"
