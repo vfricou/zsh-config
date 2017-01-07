@@ -1,10 +1,10 @@
 #!/bin/zsh
 # BATDIR is the folder with your battery characteristics
 BATDIR="/sys/class/power_supply/BAT0"
-ACSTAT=$(cat /sys/class/power_supply/AC/online)
+ACSTAT=$(cat /sys/class/power_supply/AC0/online)
 
-max=`cat $BATDIR/charge_full`
-current=`cat $BATDIR/charge_now`
+max=`cat $BATDIR/energy_full`
+current=`cat $BATDIR/energy_now`
 percent=$(( 100 * $current / $max ))
 
 if [ -n ${ACSTAT} ]
