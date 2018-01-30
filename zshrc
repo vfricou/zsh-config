@@ -80,6 +80,10 @@ if [[ -r /etc/zsh/aliases.zsh ]]; then
 	source /etc/zsh/aliases.zsh
 fi
 
+if [ $commands[kubectl] ]; then
+	source /etc/zsh/plugins/kubernetes/kubectl.zsh
+fi
+
 # Set the right-hand prompt
 if [ "`id -u`" -eq 0 ];then
 	PROMPT="
