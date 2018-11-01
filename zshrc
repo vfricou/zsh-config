@@ -1,27 +1,18 @@
-# Lines configured by zsh-newuser-install
+# zsh history configuration
 HISTFILE=~/.histfile
 HISTSIZE=100000
 SAVEHIST=100000
+setopt appendhistory autocd beep extendedglob nomatch notify
+
+# set default editor
 export EDITOR="vim"
 export VISUAL="vim"
 
+# load command completion
 autoload -Uz compinit
 compinit
 autoload -Uz bashcompinit
 bashcompinit
-setopt correctall
-autoload -Uz promptinit
-promptinit
-autoload -Uz colors && colors
-
-bindkey '^R' history-incremental-search-backward
-
-setopt appendhistory autocd beep extendedglob nomatch notify
-### Command highlightning if exist
-if [[ -r /etc/zsh/syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
-	source /etc/zsh/syntax-highlighting/zsh-syntax-highlighting.zsh
-fi
-
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 zstyle ':completion:*:warnings' format '%BDésolé, pas de résultats pour : %d%b'
 zstyle ':completion:*' menu select=2
@@ -32,7 +23,23 @@ zstyle ':completion:*:cp:*' ignore-line yes
 zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin
 zstyle ":completion:*:commands" rehash 1
 
+# activate command correction
+setopt correctall
+
+autoload -Uz promptinit
+promptinit
 setopt prompt_subst
+
+# load command colorization
+autoload -Uz colors && colors
+
+# rebind keys
+bindkey '^R' history-incremental-search-backward
+
+### Command highlightning if exist
+if [[ -r /etc/zsh/syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+	source /etc/zsh/syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
 
 ## Set zsh environment
 # git prompt
@@ -45,7 +52,7 @@ if [[ -r /etc/zsh/plugins/bind_keys/bind_keys.plugin.zsh ]]; then
 	source /etc/zsh/plugins/bind_keys/bind_keys.plugin.zsh
 fi
 # Prompt insertion for battery status on RPROMT
-if [[ -r /sys/class/power_supply/AC0 && -r /sys/class/power_supply/BAT0 ]]; then
+if [[ -r /sys/class/power_supply/AC && -r /sys/class/power_supply/BAT0 ]]; then
 	local batteryp='$(/etc/zsh/plugins/battery/battery.sh)'
 fi
 # Colored man
