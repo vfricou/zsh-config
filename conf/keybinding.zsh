@@ -1,3 +1,8 @@
+# rebind keys
+bindkey '^R' history-incremental-search-backward
+bindkey '^[[1;5C' forward-word
+bindkey '^[[1;5D' backward-word
+
 if [[ -z "$DEBIAN_PREVENT_KEYBOARD_CHANGES" ]] &&
 	[[ "$TERM" != 'emacs' ]]
 then
