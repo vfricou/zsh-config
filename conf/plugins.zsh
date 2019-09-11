@@ -33,9 +33,9 @@ if [[ -r $ZSH_PLUGINS/sprunge/sprunge.plugin.zsh ]]; then
 	source $ZSH_PLUGINS/sprunge/sprunge.plugin.zsh
 fi
 # Source ssh-agent auto evaluation
-#if [[ -r $ZSH_PLUGINS/ssh-agent/ssh-agent.plugin.zsh ]]; then
-#	source $ZSH_PLUGINS/ssh-agent/ssh-agent.plugin.zsh
-#fi
+if [[ -r $ZSH_PLUGINS/ssh-agent/ssh-agent.plugin.zsh ]]; then
+	source $ZSH_PLUGINS/ssh-agent/ssh-agent.plugin.zsh
+fi
 
 # Zsh autosuggestions
 if [[ -r $ZSH_PLUGINS/autosuggestions/zsh-autosuggestions.zsh ]]; then
