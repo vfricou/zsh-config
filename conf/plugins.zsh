@@ -46,3 +46,8 @@ fi
 if [[ -r $ZSH_PLUGINS/docker/docker.plugin.zsh ]]; then
 	source $ZSH_PLUGINS/docker/docker.plugin.zsh
 fi
+
+# source kubernetes command completion
+if [[ -r $ZSH_PLUGINS/kubectl/kubectl.plugin.zsh ]]; then
+	source $ZSH_PLUGINS/kubectl/kubectl.plugin.zsh
+fi
