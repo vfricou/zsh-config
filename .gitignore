@@ -1,1 +1,5 @@
+# Ignore IDE and editor files and folder
 *\~
+.*\~
+.idea
+.vscode

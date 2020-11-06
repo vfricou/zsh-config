@@ -2,8 +2,8 @@
 # Define variables used to load configs
 #######################################
 local ZSH_BASE=/etc/zsh
-local ZSH_CONF=$ZSH_BASE/conf
-local ZSH_PLUGINS=$ZSH_BASE/plugins
+local ZSH_CONF=${ZSH_BASE}/conf
+local ZSH_PLUGINS=${ZSH_BASE}/plugins
 
 ######################################
 # Set default shell variables
@@ -33,9 +33,9 @@ setopt prompt_subst					 # Force autorefresh prompt on each lines
 #######################################
 # Load various configurations
 #######################################
-source $ZSH_CONF/history.zsh
-source $ZSH_CONF/completion.zsh
-source $ZSH_CONF/aliases.zsh
-source $ZSH_CONF/keybinding.zsh
-source $ZSH_CONF/plugins.zsh
-source $ZSH_CONF/prompt.zsh
+source ${ZSH_CONF}/history.zsh
+source ${ZSH_CONF}/completion.zsh
+source ${ZSH_CONF}/aliases.zsh
+source ${ZSH_CONF}/keybinding.zsh
+source ${ZSH_CONF}/plugins.zsh
+source ${ZSH_CONF}/prompt.zsh
