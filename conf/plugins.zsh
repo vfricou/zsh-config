@@ -40,3 +40,9 @@ fi
 if [[ -r ${ZSH_PLUGINS}/rbenv/rbenv.plugin.zsh && -f /usr/bin/rbenv ]]; then
   source ${ZSH_PLUGINS}/rbenv/rbenv.plugin.zsh
 fi
+
+# Source ansible_init plugin
+if [[ -r ${ZSH_PLUGINS}/ansible_init/ansible_init.plugin.zsh && -f /usr/bin/ansible-playbook ]]; then
+  source ${ZSH_PLUGINS}/ansible_init/ansible_init.plugin.zsh
+fi
+
