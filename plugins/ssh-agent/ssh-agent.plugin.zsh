@@ -52,7 +52,7 @@ function _add_identities() {
 }
 
 # Get the filename to store/lookup the environment from
-_ssh_env_cache="$HOME/.ssh/environment-$SHORT_HOST"
+_ssh_env_cache="$HOME/.ssh/environment-$HOST"
 
 # test if agent-forwarding is enabled
 zstyle -b :omz:plugins:ssh-agent agent-forwarding _agent_forwarding
@@ -68,7 +68,7 @@ elif [[ -f "$_ssh_env_cache" ]]; then
 	else
 		FILTER="x"
 	fi
-	ps $FILTER | grep ssh-agent | grep -q $SSH_AGENT_PID || {
+	[[ "$(ps $FILTER | grep ssh-agent | grep -e $SSH_AGENT_PID)" ]] || {
 		_start_agent
 	}
 else
