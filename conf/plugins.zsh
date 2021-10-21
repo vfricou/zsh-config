@@ -33,12 +33,8 @@ if [[ -r ${ZSH_PLUGINS}/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
 	source ${ZSH_PLUGINS}/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 # source kubernetes command completion
-if [[ -r ${ZSH_PLUGINS}/kubectl/kubectl.plugin.zsh && -f /usr/bin/kubectl ]]; then
+if [[ -r ${ZSH_PLUGINS}/kubectl/kubectl.plugin.zsh && $+commands[kubectl] ]]; then
 	source ${ZSH_PLUGINS}/kubectl/kubectl.plugin.zsh
-fi
-# Source rbenv auto eval plugin
-if [[ -r ${ZSH_PLUGINS}/rbenv/rbenv.plugin.zsh && -f /usr/bin/rbenv ]]; then
-  source ${ZSH_PLUGINS}/rbenv/rbenv.plugin.zsh
 fi
 
 # Source ansible_init plugin
