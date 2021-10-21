@@ -4,6 +4,9 @@
 local ZSH_BASE=/etc/zsh
 local ZSH_CONF=${ZSH_BASE}/conf
 local ZSH_PLUGINS=${ZSH_BASE}/plugins
+local ZSH_CACHE_DIR=/tmp/zsh_cache
+
+if [ -d ${ZSH_CACHE_DIR} ]; then mkdir -p ${ZSH_CACHE_DIR}; fi
 
 ######################################
 # Set default shell variables
