@@ -91,7 +91,7 @@ zstyle -b :omz:plugins:ssh-agent agent-forwarding agent_forwarding
 
 # Add a nifty symlink for screen/tmux if agent forwarding
 if [[ $agent_forwarding = "yes" && -n "$SSH_AUTH_SOCK" && ! -L "$SSH_AUTH_SOCK" ]]; then
-  ln -sf "$SSH_AUTH_SOCK" ${HOME}/.ssh-agent.sock
+  ln -sf "$SSH_AUTH_SOCK" ${HOME}/.ssh/.ssh-agent.sock
 else
   _start_agent
 fi
